@@ -4,7 +4,7 @@
     imgPath <- system.file('inst/www', package='CANDIS')
   }
   if(!is.null(imgPath)&&imgPath!=""){
-    addResourcePath("www",imgPath)
+    shiny::addResourcePath("www",imgPath)
   }
 }
 
