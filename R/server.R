@@ -1,7 +1,3 @@
-library(plyr)
-library(ggplot2)
-
-
 # Define server logic
 dt_id <- 1
 
