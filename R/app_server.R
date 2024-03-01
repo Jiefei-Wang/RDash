@@ -10,9 +10,14 @@ qwidth <- qheight*416/1090
 
 
 
-
-server <- function(input, output) {
-    datasets <- reactive({
+#' The application server-side
+#'
+#' @param input,output,session Internal parameters for {shiny}.
+#'     DO NOT REMOVE.
+#' @import shiny
+#' @noRd
+app_server <- function(input, output, session) {
+  datasets <- reactive({
         nms <- availableDatasets()
         dt <- lapply(nms, getDataset)
         names(dt) <- nms
@@ -104,4 +109,3 @@ server <- function(input, output) {
         output_server(id, panelConfig = panelConfigs[[i]], data = filteredData)
     })
 }
-
